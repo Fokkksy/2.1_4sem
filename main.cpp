@@ -15,7 +15,7 @@ int main() {
 	//замечено, что ёмкость вектора увеличивается примерно в 1,5 раза
 
 	//***
-	std::cout << "\n\nANALYZING CAPACITY RESERVE" << v.size() << std::endl;
+	std::cout << "\n\nANALYZING CAPACITY RESERVE" << std::endl;
 	std::vector<int> s(1, 0);
 	s.reserve(5); //установили определённую ёмкость вектора, которая должа быть как минимум 5
 	for (int i = 1; i < 5; ++i) {
@@ -28,13 +28,13 @@ int main() {
 	}
 
 	//проверяем ОС на выносливость
-	std::cout << "\n\nVERY BIG VECTOR" << v.size() << std::endl;
-	std::vector<int> v(1, 0);
-	std::cout << "Currient size of vector = " << v.size() << std::endl;
-	std::cout << "Currient capacity of vector = " << v.capacity() << std::endl;
+	std::cout << "\n\nVERY BIG VECTOR" << std::endl;
+	std::vector<int> f(1000, 0);
+	std::cout << "Currient size of vector = " << f.size() << std::endl;
+	std::cout << "Currient capacity of vector = " << f.capacity() << std::endl;
 	for (int i = 1; i < 100; ++i) {
-		v.push_back(i);
-		print_vector(v);
+		f.push_back(i);
+		std::cout << "\nSIZE = " << f.size() << ";   CAPASITY = " << f.capacity() << std::endl;
 	}
 
 	return 0;
