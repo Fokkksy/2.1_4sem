@@ -29,14 +29,14 @@ int main() {
 
 	//проверяем ОС на выносливость
 	std::cout << "\n\nVERY BIG VECTOR" << std::endl;
-	std::vector<int> f(1000, 0);
+	std::vector<int> f(1000000000, 0);
 	std::cout << "Currient size of vector = " << f.size() << std::endl;
 	std::cout << "Currient capacity of vector = " << f.capacity() << std::endl;
-	for (int i = 1; i < 100; ++i) {
+	for (int i = 1; i < 10000000; ++i) {
 		f.push_back(i);
-		std::cout << "\nSIZE = " << f.size() << ";   CAPASITY = " << f.capacity() << std::endl;
 	}
-
+	std::cout << "\nSIZE = " << f.size() << ";   CAPASITY = " << f.capacity() << std::endl;
+	//при больших ёмкостях програма перестаёт работать
 	return 0;
 }
 
