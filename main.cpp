@@ -12,11 +12,10 @@ int main() {
 		print_vector(v);
 	} 
 	
-	//замечено, что ёмкость вектора увеличивается 2 в некотой степени элементов
-	//причём степень двойки увеличивается на единицу, начиная с 0
+	//замечено, что ёмкость вектора увеличивается примерно в 1,5 раза
 
 	//***
-	
+	std::cout << "\n\nANALYZING CAPACITY RESERVE" << v.size() << std::endl;
 	std::vector<int> s(1, 0);
 	s.reserve(5); //установили определённую ёмкость вектора, она в процессе работы не будет меняться
 	for (int i = 1; i < 5; ++i) {
@@ -31,7 +30,7 @@ int main() {
 }
 
 void print_vector(const std::vector<int>& v) {
-	std::cout << "SIZE = " << v.size() << ";   CAPASITY = " << v.capacity() << std::endl;
+	std::cout << "\nSIZE = " << v.size() << ";   CAPASITY = " << v.capacity() << std::endl;
 	for (auto x : v)
 		std::cout << x << " ";
 }
