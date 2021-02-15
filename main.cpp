@@ -17,7 +17,7 @@ int main() {
 	//***
 	std::cout << "\n\nANALYZING CAPACITY RESERVE" << v.size() << std::endl;
 	std::vector<int> s(1, 0);
-	s.reserve(5); //установили определённую ёмкость вектора, она в процессе работы не будет меняться
+	s.reserve(5); //установили определённую ёмкость вектора, которая должа быть как минимум 5
 	for (int i = 1; i < 5; ++i) {
 		s.push_back(6);
 		print_vector(s);
@@ -26,6 +26,17 @@ int main() {
 		s.pop_back();
 		print_vector(s);
 	}
+
+	//проверяем ОС на выносливость
+	std::cout << "\n\nVERY BIG VECTOR" << v.size() << std::endl;
+	std::vector<int> v(1, 0);
+	std::cout << "Currient size of vector = " << v.size() << std::endl;
+	std::cout << "Currient capacity of vector = " << v.capacity() << std::endl;
+	for (int i = 1; i < 100; ++i) {
+		v.push_back(i);
+		print_vector(v);
+	}
+
 	return 0;
 }
 
