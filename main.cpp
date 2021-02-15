@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-const int N1 = 99999999999;
 
 int main() {
 	std::vector<int> v(5, 0);
