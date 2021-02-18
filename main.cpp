@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <exception>
+#include <stdexcept>
 
 void print_vector(const std::vector<int>& v);
 
@@ -29,19 +31,22 @@ int main() {
 
 	//проверяем ОС на выносливость
 	std::cout << "\n\nVERY BIG VECTOR" << std::endl;
-	std::vector<int> f(1000000000, 0);
-	std::cout << "Currient size of vector = " << f.size() << std::endl;
-	std::cout << "Currient capacity of vector = " << f.capacity() << std::endl;
-	for (int i = 1; i < 10000000; ++i) {
-		f.push_back(i);
+	std::vector<int> long_v(999);
+	try
+	{
+		long_v.reserve(9999999999999999);
 	}
-	std::cout << "\nSIZE = " << f.size() << ";   CAPASITY = " << f.capacity() << std::endl;
+	catch (const std::exception& exception)
+	{
+		std::cerr<< exception.what()<< std::endl;
+	}
+	std::cout << "\nSIZE = " << long_v.size() << ";   CAPACITY = " << long_v.capacity() << std::endl;
 	//при больших ёмкостях програма перестаёт работать
 	return 0;
 }
 
 void print_vector(const std::vector<int>& v) {
-	std::cout << "\nSIZE = " << v.size() << ";   CAPASITY = " << v.capacity() << std::endl;
+	std::cout << "\nSIZE = " << v.size() << ";   CAPACITY = " << v.capacity() << std::endl;
 	for (auto x : v)
 		std::cout << x << " ";
 }

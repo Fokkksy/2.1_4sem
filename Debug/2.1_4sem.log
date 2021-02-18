@@ -1,2 +1,4 @@
 ﻿  main.cpp
+C:\Users\Вадим\source\repos\2.1_4sem\2.1_4sem\main.cpp(37,34): warning C4305: аргумент: усечение из "__int64" в "const unsigned int"
+C:\Users\Вадим\source\repos\2.1_4sem\2.1_4sem\main.cpp(37,18): warning C4309: аргумент: усечение константного значения
   2.1_4sem.vcxproj -> C:\Users\Вадим\source\repos\2.1_4sem\Debug\2.1_4sem.exe
